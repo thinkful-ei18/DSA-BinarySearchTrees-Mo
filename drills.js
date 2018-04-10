@@ -15,7 +15,8 @@ function main() {
   BST.insert(5, 5);
   BST.insert(7, 7);
   //   console.log(util.inspect(bst, false, null));
-  console.log(newBstHeight(BST));
+  // console.log(newBstHeight(BST));
+  console.log(isBst(BST));
 }
 
 main();
@@ -65,4 +66,14 @@ function newBstHeight(tree) {
     return newBstHeight(tree.left) + 1;
   }
   return 1;
+}
+
+function isBst(tree) {
+  if (tree.left.value > tree.value) {
+    return false;
+  } else if (tree.right.value < tree.value) {
+    return false;
+  } else {
+    return true;
+  }
 }
