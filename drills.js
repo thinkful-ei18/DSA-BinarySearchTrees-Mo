@@ -33,7 +33,11 @@ function bstHeight(bst, height = 1) {
     height++;
     let rightHeight = bstHeight(bst.right, height);
     let leftHeight = bstHeight(bst.left, height);
-    return Math.max(rightHeight, leftHeight);
+    if (leftHeight > rightHeight) {
+      return leftHeight;
+    } else {
+      return rightHeight;
+    }
   } else if (bst.left) {
     height++;
     bstHeight(bst.left, height);
